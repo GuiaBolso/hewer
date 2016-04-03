@@ -1,0 +1,20 @@
+{
+  "name": "hewer",
+  "version": "0.0.0",
+  "description": "A small and flexible logging library",
+  "repository" : "https://github.com/matchs/hewer",
+  "main": "hewer.js",
+  "scripts": {
+    "test": "node ./tests/tests.js"
+  },
+  "keywords": [
+    "log",
+    "logging",
+    "logger"
+  ],
+  "author": "Mateus Chagas Sousa <mateuschs@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "promise": "^7.1.1"
+  }
+}
