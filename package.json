@@ -1,11 +1,14 @@
 {
   "name": "hewer",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A small and flexible logging library",
   "repository": "https://github.com/matchs/hewer",
   "main": "hewer.js",
   "scripts": {
-    "test": "node ./tests/tests.js"
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "engines" : {
+    "node" : ">=4.0.0"
   },
   "keywords": [
     "log",
