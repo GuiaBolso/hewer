@@ -2,7 +2,7 @@
   "name": "hewer",
   "version": "0.0.0",
   "description": "A small and flexible logging library",
-  "repository" : "https://github.com/matchs/hewer",
+  "repository": "https://github.com/matchs/hewer",
   "main": "hewer.js",
   "scripts": {
     "test": "node ./tests/tests.js"
@@ -16,5 +16,10 @@
   "license": "MIT",
   "dependencies": {
     "promise": "^7.1.1"
+  },
+  "devDependencies": {
+    "mocha": "^2.4.5",
+    "mocha-sinon": "^1.1.5",
+    "sinon": "^1.17.3"
   }
 }
