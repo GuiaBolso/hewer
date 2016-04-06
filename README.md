@@ -1,4 +1,6 @@
-# Hewer
+# Hewer 
+[https://www.npmjs.com/package/hewer](https://www.npmjs.com/package/hewer "Hewer npm registry")
+
 A small, flexible and easy-to-use logging library for node.js
 
 # Basic Usage
