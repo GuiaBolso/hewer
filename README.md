@@ -43,6 +43,10 @@ Appends some meta data to the log.
 ## `Log.info(message)` returns `Promise`
 Commits the `message` and the `meta` provided to the set of writers with log level `INFO`.
 
+### Parameters
+1. `message` : `STRING` - `OPTIONAL - Some arbitrary log message.
+ 
+
 ## `Log.warn(message)` returns `Promise`
 Just like `Log.info` but with log level `WARN`.
 ## `Log.error(message)` returns `Promise`
