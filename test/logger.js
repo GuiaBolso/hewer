@@ -15,7 +15,7 @@ describe('Testing default logger with meta data', function() {
         .with('c', '3')
         .info(testString)
         .then(function(msg) {
-            assert.ok(msg[0].match(/[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]{3}Z INFO .+"a":"1".+"b":"2".+"c":"3"/));
+            assert.ok(msg[0].match(/[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]{3} INFO .+"a":"1".+"b":"2".+"c":"3"/));
             done();
         })
         .catch(done);
@@ -26,7 +26,7 @@ describe('Testing default logger with meta data', function() {
         .with('c', '3')
         .warn(testString)
         .then(function(msg) {
-            assert.ok(msg[0].match(/[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]{3}Z WARN .+"a":"1".+"b":"2".+"c":"3"/));
+            assert.ok(msg[0].match(/[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]{3} WARN .+"a":"1".+"b":"2".+"c":"3"/));
             done();
         })
         .catch(done);
@@ -37,7 +37,7 @@ describe('Testing default logger with meta data', function() {
         .with('c', '3')
         .error(testString)
         .then(function(msg) {
-            assert.ok(msg[0].match(/[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]{3}Z ERROR .+"c":"3"/));
+            assert.ok(msg[0].match(/[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]{3} ERROR .+"c":"3"/));
             done();
         })
         .catch(done);
@@ -49,7 +49,7 @@ describe('Testing default logger with meta data', function() {
         .with('c', '3')
         .debug(testString)
         .then(function(msg) {
-            assert.ok(msg[0].match(/[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]{3}Z DEBUG .+"c":"3"/));
+            assert.ok(msg[0].match(/[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]{3} DEBUG .+"c":"3"/));
             done();
         })
         .catch(done);
@@ -64,7 +64,7 @@ describe('Testing default logger without any meta data', function() {
         Logger.log()
         .info(testString)
         .then(function(msg) {
-            assert.ok(msg[0].match(/[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]{3}Z INFO .+ \{\}/))
+            assert.ok(msg[0].match(/[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]{3} INFO .+ \{\}/))
             done();
         })
         .catch(done);
@@ -74,7 +74,7 @@ describe('Testing default logger without any meta data', function() {
         Logger.log()
         .warn(testString)
         .then(function(msg) {
-            assert.ok(msg[0].match(/[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]{3}Z WARN .+ \{\}/))
+            assert.ok(msg[0].match(/[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]{3} WARN .+ \{\}/))
             done();
         })
         .catch(done);
@@ -84,7 +84,7 @@ describe('Testing default logger without any meta data', function() {
         Logger.log()
         .error(testString)
         .then(function(msg) {
-            assert.ok(msg[0].match(/[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]{3}Z ERROR .+ \{\}/))
+            assert.ok(msg[0].match(/[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]{3} ERROR .+ \{\}/))
             done();
         })
         .catch(done);
@@ -95,7 +95,7 @@ describe('Testing default logger without any meta data', function() {
         Logger.log()
         .debug(testString)
         .then(function(msg) {
-            assert.ok(msg[0].match(/[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]{3}Z DEBUG .+ \{\}/))
+            assert.ok(msg[0].match(/[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}.[0-9]{3} DEBUG .+ \{\}/))
             done();
         })
         .catch(done);
