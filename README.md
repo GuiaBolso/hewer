@@ -3,6 +3,13 @@
 
 A small, flexible and easy-to-use logging library for node.js
 
+# Index
+* [Basic Usage](#basic-usage)
+* [API](#api)
+* [Filters](#filters)
+* [Formatters](#formatters)
+* [Writers](#writers)
+
 # Basic Usage
 
 ```javascript
@@ -57,7 +64,48 @@ Just like `Log.info` but with log level `ERROR`.
 Just like `Log.info` but with log level `DEBUG`.
 
 # Filters
-To be documented
+A filter receives a formatted log message and then applies some string-transformation rule over it.
+
+## Usage
+
+```javascript
+var hewer = require('hewer');
+var PatternFilter = hewer.filters.PatternFilter;
+
+var nameErasingFilter = new PatternFilter(/(\"name\"\:)(\".*?\")/, '$1[REDACTED]');
+
+var Logger = new hewer.Logger([nameErasingFilter]);
+
+Logger.log({ // A JSON of data to be logged
+  'name'  : 'Aragorn',
+  'class' : 'Ranger'
+})
+.with('level', '99') // Add more meta data
+.with('kingdom', 'Gondor') // And a few more meta data
+.info('Here comes the king');
+
+// 2016-04-08T15:02:54.022 INFO Here comes the king {"name":[REDACTED],"class":"Ranger","level":"99","kingdom":"Gondor"}
+```
+
+## Built-in Filters
+
+### Identity Filter
+The default filter used in case you don't pick any. Just returns the string as it is.
+
+```javascript
+var IdentityFilter = require('hewer').filters.IdentityFilter;
+
+var filter = new IdentityFilter();
+
+console.log(filter.apply('You shall not pass!'))
+//You shall not pass!
+```
+
+### Pattern Filter
+
+```javascript
+
+```
 
 ## Custom filter
 To be documented
