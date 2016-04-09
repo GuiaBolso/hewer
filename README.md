@@ -89,22 +89,34 @@ Logger.log({ // A JSON of data to be logged
 
 ## Built-in Filters
 
-### Identity Filter
+### class `IdentityFilter`
 The default filter used in case you don't pick any. Just returns the string as it is.
 
+#### Usage
 ```javascript
 var IdentityFilter = require('hewer').filters.IdentityFilter;
 
 var filter = new IdentityFilter();
 
-console.log(filter.apply('You shall not pass!'))
+console.log(filter.apply('You shall not pass!'));
 //You shall not pass!
 ```
 
-### Pattern Filter
+### class `PatternFilter(pattern, replacement)`
+A filter that applies a pattern or substring and replaces it by a pattern or substring
 
+#### Parameters
+1. `pattern` : `STRING or REGEXP` - `MANDATORY` - The pattern for matching some string
+2. `replacement` : `STRING` - `MANDATORY` - The string for which the pattern should be replaced
+
+#### Usage
 ```javascript
+var PatternFilter =  require('hewer').filters.PatternFilter;
 
+var filter = new PatternFilter(/(Aragorn)/, '$1 (A.K.A Strider)');
+
+console.log(filter.apply("I am Aragorn son of Arathorn"));
+//I am Aragorn (A.K.A Strider) son of Arathorn
 ```
 
 ## Custom filter
