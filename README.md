@@ -162,6 +162,17 @@ Logger.log().warn('Chip the glasses and crack the plates!');
 
 ### class `DefaultFormatter()`
 
+#### Usage
+
+```javascript
+var DefaultFormatter =  require('hewer').formatters.DefaultFormatter;
+
+var formatter = new DefaultFormatter();
+
+console.log(formatter.format("There is only one Lord of the Ring, only one who can bend it to his will", "INFO", {}));
+//2016-04-10T16:16:13.763 INFO There is only one Lord of the Ring, only one who can bend it to his will {}
+```
+
 ## Custom formatter
 A formatter is simply a class that has a `format` method that receives some `message`, some `log level name`, and some `meta data` and returns a formatted string.
 
