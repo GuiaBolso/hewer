@@ -1,6 +1,6 @@
 {
   "name": "hewer",
-  "version": "0.1.1",
+  "version": "0.1.1-1",
   "description": "A small and flexible logging library",
   "repository": "https://github.com/matchs/hewer",
   "main": "hewer.js",
