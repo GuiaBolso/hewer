@@ -1,4 +1,6 @@
 # Hewer
+[![wercker status](https://app.wercker.com/status/1530b3086576b34687fb4819b7a4ff4a/s "wercker status")](https://app.wercker.com/project/bykey/1530b3086576b34687fb4819b7a4ff4a)
+
 [https://www.npmjs.com/package/hewer](https://www.npmjs.com/package/hewer "Hewer npm registry")
 
 A small, flexible and easy-to-use logging library for node.js
