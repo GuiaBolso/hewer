@@ -1,4 +1,4 @@
-# Hewer 
+# Hewer
 [https://www.npmjs.com/package/hewer](https://www.npmjs.com/package/hewer "Hewer npm registry")
 
 A small, flexible and easy-to-use logging library for node.js
@@ -54,7 +54,7 @@ Commits the `message` and the `meta` provided to the set of writers with log lev
 
 ### Parameters
 1. `message` : `STRING` - `OPTIONAL - Some arbitrary log message.
- 
+
 
 ## `Log.warn(message)` returns `Promise`
 Just like `Log.info` but with log level `WARN`.
@@ -120,7 +120,25 @@ console.log(filter.apply("I am Aragorn son of Arathorn"));
 ```
 
 ## Custom filter
-To be documented
+A filter is simply a class that has an `apply` method that takes a string as parameter and returns a string
+
+```javascript
+var hewer = require('hewer');
+
+function CustomFilter() {
+	this.apply = function(str) {
+		//Do something with the string
+		return str + " That's what Bilbo Baggins hates!";
+	}
+}
+
+var Logger = new hewer.Logger([new CustomFilter()])
+
+Logger.log().warn('Smash the bottles and burn the corks!');
+//2016-04-10T15:30:50.546 WARN Smash the bottles and burn the corks! {} That's what Bilbo Baggins hates!
+Logger.log().warn('Chip the glasses and crack the plates!');
+//2016-04-10T15:30:50.551 WARN Chip the glasses and crack the plates! {} That's what Bilbo Baggins hates!
+```
 
 # Formatters
 To be documented
