@@ -4,11 +4,18 @@
 A small, flexible and easy-to-use logging library for node.js
 
 # Index
+* [Installation](#Installation)
 * [Basic Usage](#basic-usage)
 * [API](#api)
 * [Filters](#filters)
 * [Formatters](#formatters)
 * [Writers](#writers)
+
+# Installation
+
+```
+npm install --save hewer
+```
 
 # Basic Usage
 
@@ -83,7 +90,6 @@ Logger.log({ // A JSON of data to be logged
 .with('level', '99') // Add more meta data
 .with('kingdom', 'Gondor') // And a few more meta data
 .info('Here comes the king');
-
 // 2016-04-08T15:02:54.022 INFO Here comes the king {"name":[REDACTED],"class":"Ranger","level":"99","kingdom":"Gondor"}
 ```
 
@@ -122,6 +128,16 @@ console.log(filter.apply("I am Aragorn son of Arathorn"));
 ## Custom filter
 A filter is simply a class that has an `apply` method that takes a string as parameter and returns a string
 
+### API
+
+#### interface `Filter()`
+
+#### `Filter.apply(message)` returns `STRING`
+
+##### Parameters
+1. `message` : `STRING` - `MANDATORY` - The log string that will be sent to a writer
+
+### Usage
 ```javascript
 var hewer = require('hewer');
 
@@ -141,10 +157,44 @@ Logger.log().warn('Chip the glasses and crack the plates!');
 ```
 
 # Formatters
-To be documented
+
+## Built-in formatters
+
+### class `DefaultFormatter()`
 
 ## Custom formatter
-To be documented
+A formatter is simply a class that has a `format` method that receives some `message`, some `log level name`, and some `meta data` and returns a formatted string.
+
+### API
+
+#### interface `Formatter`
+
+#### `Formatter.format(message, level, meta)` returns `STRING`
+
+##### Parameters
+1. `message` : `STRING` - `MANDATORY` - The log message
+2. `level` : `STRING` - `MANDATORY` - Some log level name
+3. `meta` : `JSON` - `MANDATORY` - Some meta data object
+
+### Usage
+
+```javascript
+var hewer = require('hewer');
+
+var function CustomFormatter() {
+    this.format = function(message, level, meta) {
+        return `${level} ${message} ${JSON.stringify(meta)}`;
+    }
+}
+
+var Logger = new hewer.Logger(null, null, new CustomFormatter())
+
+Logger.log({ titles : [
+    'The gray',
+    'The white'] })
+    .info('Gandalf!');
+// "INFO Gandalf! {"titles":["The gray","The white"]}"
+```
 
 # Writers
 To be documented
@@ -152,5 +202,34 @@ To be documented
 ## Custom writers
 To be documented
 
-## Asynchonous writers
+## Asynchronous writers
 To be documented
+
+# Contributing
+If you want to contribute to the project with new Filters, Formatters, Writers, fixes, functionalities, optimizations, documentation, issues etc. All you have to do is open an issue and, if needed, fork this project and make a pull request.
+
+# License
+
+```
+The MIT License (MIT)
+
+Copyright (c) 2016 Mateus Chagas
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
