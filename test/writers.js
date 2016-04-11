@@ -7,37 +7,37 @@ describe('Testing console writer', function() {
     var writer = new writers.ConsoleWriter();
 
     it('info', function(done) {
-        var info = console.info;
         this.sinon.stub(console, 'info');
+        var info = console.info;
         writer.info("Test string", function() {
-            assert.ok(console.info.calledOnce)
+            assert.ok(info.calledOnce)
             done();
         });
     });
 
     it('debug', function(done) {
-        var log = console.log;
         this.sinon.stub(console, 'log');
+        var log = console.log;
         writer.debug("Test string", function() {
-            assert.ok(console.log.calledOnce)
+            assert.ok(log.calledOnce)
             done();
         });
     });
 
     it('warn', function(done) {
-        var warn = console.warn;
         this.sinon.stub(console, 'warn');
+        var warn = console.warn;
         writer.warn("Test string", function() {
-            assert.ok(console.warn.calledOnce)
+            assert.ok(warn.calledOnce)
             done();
         });
     });
 
     it('error', function(done) {
-        var error = console.error;
         this.sinon.stub(console, 'error');
+        var error = console.error;
         writer.error("Test string", function() {
-            assert.ok(console.error.calledOnce)
+            assert.ok(error.calledOnce)
             done();
         });
     });
