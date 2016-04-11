@@ -1,6 +1,6 @@
 {
   "name": "hewer",
-  "version": "0.1.1-1",
+  "version": "0.2.0",
   "description": "A small and flexible logging library",
   "repository": "https://github.com/matchs/hewer",
   "main": "hewer.js",
@@ -8,7 +8,7 @@
     "test": "./node_modules/mocha/bin/mocha"
   },
   "engines" : {
-    "node" : ">=4.0.0"
+    "node" : ">=4.4.2"
   },
   "keywords": [
     "log",
@@ -17,9 +17,6 @@
   ],
   "author": "Mateus Chagas Sousa <mateuschs@gmail.com>",
   "license": "MIT",
-  "dependencies": {
-    "promise": "^7.1.1"
-  },
   "devDependencies": {
     "mocha": "^2.4.5",
     "mocha-sinon": "^1.1.5",
