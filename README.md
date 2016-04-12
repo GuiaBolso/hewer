@@ -12,6 +12,8 @@ A small, flexible and easy-to-use logging library for node.js
 * [Filters](#filters)
 * [Formatters](#formatters)
 * [Writers](#writers)
+* [Contributing](#contributing)
+* [License](#license)
 
 # Installation
 
