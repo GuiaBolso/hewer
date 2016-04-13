@@ -47,13 +47,37 @@ Logger.log({ // A JSON of data to be logged
 2. `writers`: `Array of Writer` - `OPTIONAL` - A list of writers that will be used to write the log message to some output. If no writer is provided then the `ConsoleWriter` will be used.
 3. `formatter`: `Formatter` - `OPTIONAL` - A formatter that may transform and format the message before sending it to a writer. If no formatter is provided then the `DefaultFormatter` will be used.
 
-## `Logger.log(meta)` returns `Log`
+## `Logger.log(meta)` returns [`Log`](#log)
 Creates a new log instance with the optional provided meta data.
 
 ### Parameters
 1. `meta` : `JSON` - `OPTIONAL` - A JSON with a any arbitrary meta.
 
-## `Log.with(key, value)` returns `Log`
+## `Logger.addFilter(filter)`
+Adds a [Filter](#filters) to the filters pool
+
+### Parameters
+1. `filter` : [`Filter`](#filters) - `MANDATORY` - 
+
+## `Logger.addWriter(writer)` returns `Log`
+Adds a [Writer](#writers) to the writers pool
+
+### Parameters
+1. `writer` : [`Writer`](#writers) - `MANDATORY` - 
+
+## `Logger.setFormatter(formatter)`
+Defines the [Formatter](#formatters) that's going to be used
+
+### Parameters
+1. `formatter` : [`Formatter`](#formatters) - `MANDATORY`
+
+## class `Log(meta, logger)`
+
+### Parameters
+1. `meta` : `JSON` - `MANDATORY` - A JSON with a any arbitrary meta.
+2. `logger` : [`Logger`](#logger) - `MANDATORY`
+
+## `Log.with(key, value)` returns [`Log`](#log)
 Appends some meta data to the log.
 
 ### Parameters
@@ -66,13 +90,14 @@ Commits the `message` and the `meta` provided to the set of writers with log lev
 ### Parameters
 1. `message` : `STRING` - `OPTIONAL - Some arbitrary log message.
 
-
 ## `Log.warn(message)` returns `Promise`
 Just like `Log.info` but with log level `WARN`.
 ## `Log.error(message)` returns `Promise`
 Just like `Log.info` but with log level `ERROR`.
 ## `Log.debug(message)` returns `Promise`
 Just like `Log.info` but with log level `DEBUG`.
+
+----
 
 # Filters
 A filter receives a formatted log message and then applies some string-transformation rule over it.
