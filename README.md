@@ -47,7 +47,7 @@ Logger.log({ // A JSON of data to be logged
 2. `writers`: `Array of Writer` - `OPTIONAL` - A list of writers that will be used to write the log message to some output. If no writer is provided then the `ConsoleWriter` will be used.
 3. `formatter`: `Formatter` - `OPTIONAL` - A formatter that may transform and format the message before sending it to a writer. If no formatter is provided then the `DefaultFormatter` will be used.
 
-## `Logger.log(meta)` returns [`Log`](#log)
+## `Logger.log(meta)` returns [`Log`](#class-logmeta-logger)
 Creates a new log instance with the optional provided meta data.
 
 ### Parameters
@@ -77,7 +77,7 @@ Defines the [Formatter](#formatters) that's going to be used
 1. `meta` : `JSON` - `MANDATORY` - A JSON with a any arbitrary meta.
 2. `logger` : [`Logger`](#logger) - `MANDATORY`
 
-## `Log.with(key, value)` returns [`Log`](#log)
+## `Log.with(key, value)` returns [`Log`](#class-logmeta-logger)
 Appends some meta data to the log.
 
 ### Parameters
