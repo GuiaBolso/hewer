@@ -302,7 +302,7 @@ Just like [Writer.info](#writerinfomessage-callback) but with ERROR log level
 ```javascript
 var hewer = require('hewer');
 
-var function CustomWriter() {
+function CustomWriter() {
     this.info = function(message, callback) {
     	//Do something with the message
         callback();
