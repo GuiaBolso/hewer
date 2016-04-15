@@ -4,7 +4,7 @@
 
 [https://www.npmjs.com/package/hewer](https://www.npmjs.com/package/hewer "Hewer npm registry")
 
-A small, flexible and easy-to-use, zero-dependency logging library for node.js
+A small, extensible, easy-to-use, zero-dependency logging library for node.js
 
 # Index
 * [Motivation](#motivation)
