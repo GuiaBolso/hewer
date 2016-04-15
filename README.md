@@ -286,7 +286,7 @@ Writes message with INFO log level
 
 ##### Parameters
 1. `message` : `STRING` - `MANDATORY` - The log message
-2. `callback` : `FUNCTION` - `MANDATORY` - A callback function to be called after the writer task has been executed
+2. `callback(error)` : `FUNCTION` - `MANDATORY` - A callback function to be called after the writer task has been executed
 
 #### `Writer.debug(message, callback)` returns `Promise`
 Just like [Writer.info](#writerinfomessage-callback) but with DEBUG log level
@@ -297,11 +297,43 @@ Just like [Writer.info](#writerinfomessage-callback) but with WARN log level
 #### `Writer.error(message, callback)` returns `Promise`
 Just like [Writer.info](#writerinfomessage-callback) but with ERROR log level
 
-## Asynchronous writers
-To be documented
+### Usage
+
+```javascript
+var hewer = require('hewer');
+
+var function CustomWriter() {
+    this.info = function(message, callback) {
+    	//Do something with the message
+        callback();
+    }
+    
+    this.debug = function(message, callback) {
+    	//Do something with the message
+        callback();
+    }
+    
+    this.error = function(message, callback) {
+    	//Do something with the message
+	callback();   
+    }
+    
+    this.warn = function(message, callback) {
+    	//Do something with the message
+        callback();
+    }
+}
+
+var Logger = new hewer.Logger(null, [new CustomWriter()])
+
+Logger.log({ titles : [
+    'The gray',
+    'The white'] })
+    .info('Gandalf!');
+```
 
 # Contributing
-If you want to contribute to the project with new Filters, Formatters, Writers, fixes, functionalities, optimizations, documentation, issues etc. All you have to do is open an issue and, if needed, fork this project and make a pull request.
+If you want to contribute to the project with new Filters, Formatters, Writers, fixes, functionalities, optimizations, documentation, issues etc. All you have to do is open an issue and, if needed, fork this project and open a pull request.
 
 # License
 
