@@ -15,6 +15,7 @@ A small, flexible and easy-to-use, zero-dependency logging library for node.js
 * [Formatters](#formatters)
 * [Writers](#writers)
 * [Contributing](#contributing)
+* [Testing](#testing)
 * [License](#license)
 
 # Motivation
@@ -339,6 +340,10 @@ Logger.log({ titles : [
 
 # Contributing
 If you want to contribute to the project with new Filters, Formatters, Writers, fixes, functionalities, optimizations, documentation, issues etc. All you have to do is open an issue and, if needed, fork this project and open a pull request.
+
+# Testing
+
+`npm test`
 
 # License
 
