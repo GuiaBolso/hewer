@@ -6,7 +6,7 @@
 A small, flexible and easy-to-use logging library for node.js
 
 # Index
-* [Installation](#Installation)
+* [Installation](#installation)
 * [Basic Usage](#basic-usage)
 * [API](#api)
 * [Filters](#filters)
@@ -36,7 +36,7 @@ Logger.log({ // A JSON of data to be logged
 .with('kingdom', 'Gondor') // And a few more meta data
 .info('Here comes the king');
 
-// 2016-04-05T03:32:15.604Z INFO Here comes the king {"name":"Aragorn","class":"Ranger","level":"99","kingdom":"Gondor"}
+// 2016-04-05T03:32:15.604 INFO Here comes the king {"name":"Aragorn","class":"Ranger","level":"99","kingdom":"Gondor"}
 ```
 # API
 
@@ -237,10 +237,65 @@ Logger.log({ titles : [
 ```
 
 # Writers
-To be documented
+A writer is the final destiny of any log message. A writer is where the message is going to be printed to the console, be sent to a database etc.
+
+## Built-in Writers
+
+### class `ConsoleWriter()`
+Writes the log message to the console
+
+#### Usage
+```javascript
+var ConsoleWriter =  require('hewer').writers.ConsoleWriter;
+
+var writer = new ConsoleWriter();
+
+
+function saySomeElficWhisper() {
+    console.log('Elfic whispering!');
+}
+
+writer.info('The world has changed', saySomeElficWhisper);
+//The world has changed
+//Elfic whispering
+
+writer.debug('I feel it in the water', saySomeElficWhisper);
+//I feel it in the water
+//Elfic whispering
+
+writer.warn('I feel it in the earth', saySomeElficWhisper);
+//I feel it in the earth
+//Elfic whispering
+
+writer.error('I smell it in the air', saySomeElficWhisper);
+//I smell it in the air
+//Elfic whispering
+
+```
+
+####
 
 ## Custom writers
-To be documented
+
+### API
+
+#### interface `Writer`
+
+#### `Writer.info(message, callback)`
+Writes message with INFO log level
+
+##### Parameters
+1. `message` : `STRING` - `MANDATORY` - The log message
+2. `callback` : `FUNCTION` - `MANDATORY` - A callback function to be called after the writer task has been executed
+
+#### `Writer.debug(message, callback)` returns `Promise`
+Just like [Writer.info](#info) but with DEBUG log level
+
+#### `Writer.warn(message, callback)` returns `Promise`
+Just like [Writer.info](#info) but with WARN log level
+
+#### `Writer.error(message, callback)` returns `Promise`
+Just like [Writer.info](#info) but with ERROR log level
 
 ## Asynchronous writers
 To be documented
