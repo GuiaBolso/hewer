@@ -60,7 +60,7 @@ Adds a [Filter](#filters) to the filters pool
 ### Parameters
 1. `filter` : [`Filter`](#filters) - `MANDATORY` - 
 
-## `Logger.addWriter(writer)` returns [`Log`](#class-logmeta-logger)
+## `Logger.addWriter(writer)`
 Adds a [Writer](#writers) to the writers pool
 
 ### Parameters
