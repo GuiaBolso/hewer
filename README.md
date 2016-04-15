@@ -4,9 +4,10 @@
 
 [https://www.npmjs.com/package/hewer](https://www.npmjs.com/package/hewer "Hewer npm registry")
 
-A small, flexible and easy-to-use logging library for node.js
+A small, flexible and easy-to-use, zero-dependency logging library for node.js
 
 # Index
+* [Motivation](#motivation)
 * [Installation](#installation)
 * [Basic Usage](#basic-usage)
 * [API](#api)
@@ -15,6 +16,9 @@ A small, flexible and easy-to-use logging library for node.js
 * [Writers](#writers)
 * [Contributing](#contributing)
 * [License](#license)
+
+# Motivation
+This library was written to solve a need I had for a simple log standardization solution that would be very easy to extend and adapt without increasing the already possibly excessively big dependency tree of my projects. So, instead of making it some internal solution, I decided to make it a stand-alone open-source library so other people could possibly benefit from it.
 
 # Installation
 
