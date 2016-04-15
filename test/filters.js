@@ -9,5 +9,12 @@ describe('Testing IdentityFilter', function() {
         assert.equal(filter.apply(inputStr), inputStr)
     });
 });
-    
 
+describe('Testing PatternFilter', function() {
+    var filter = new filters.PatternFilter(/filtered/gmi, '[REDACTED]')
+    var inputStr = "Some string that should be filtered"
+
+    it("Should filter the word 'filtered'", function() {
+        assert.equal(filter.apply(inputStr), "Some string that should be [REDACTED]");
+    });
+});
