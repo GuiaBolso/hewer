@@ -48,9 +48,9 @@ Logger.log({ // A JSON of data to be logged
 ## class `Logger(filters, writers, formatter)`
 
 ### Parameters
-1. `filters`: `Array of Filter` - `OPTIONAL` - A list of filters that will be applied to the log message.
-2. `writers`: `Array of Writer` - `OPTIONAL` - A list of writers that will be used to write the log message to some output. If no writer is provided then the `ConsoleWriter` will be used.
-3. `formatter`: `Formatter` - `OPTIONAL` - A formatter that may transform and format the message before sending it to a writer. If no formatter is provided then the `DefaultFormatter` will be used.
+1. `filters`: `Array of `[`Filter`](#filters) - `OPTIONAL` - A list of filters that will be applied to the log message.
+2. `writers`: `Array of `[`Writer`](#writers) - `OPTIONAL` - A list of writers that will be used to write the log message to some output. If no writer is provided then the `ConsoleWriter` will be used.
+3. `formatter`: [`Formatter`](#formatters) - `OPTIONAL` - A formatter that may transform and format the message before sending it to a writer. If no formatter is provided then the `DefaultFormatter` will be used.
 
 ## `Logger.log(meta)` returns [`Log`](#class-logmeta-logger)
 Creates a new log instance with the optional provided meta data.
