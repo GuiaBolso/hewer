@@ -84,17 +84,17 @@ Appends some meta data to the log.
 1. `key` : `STRING` - `MANDATORY` - The name of your meta data.
 2. `value` : `ANY` - `MANDATORY` - Your actual data.
 
-## `Log.info(message)` returns `Promise`
+## `Log.info(message)` returns [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 Commits the `message` and the `meta` provided to the set of writers with log level `INFO`.
 
 ### Parameters
 1. `message` : `STRING` - `OPTIONAL - Some arbitrary log message.
 
-## `Log.warn(message)` returns `Promise`
+## `Log.warn(message)` returns [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 Just like `Log.info` but with log level `WARN`.
-## `Log.error(message)` returns `Promise`
+## `Log.error(message)` returns [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 Just like `Log.info` but with log level `ERROR`.
-## `Log.debug(message)` returns `Promise`
+## `Log.debug(message)` returns [`Promise`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
 Just like `Log.info` but with log level `DEBUG`.
 
 ----
@@ -288,13 +288,13 @@ Writes message with INFO log level
 1. `message` : `STRING` - `MANDATORY` - The log message
 2. `callback(error)` : `FUNCTION` - `MANDATORY` - A callback function to be called after the writer task has been executed
 
-#### `Writer.debug(message, callback)` returns `Promise`
+#### `Writer.debug(message, callback)`
 Just like [Writer.info](#writerinfomessage-callback) but with DEBUG log level
 
-#### `Writer.warn(message, callback)` returns `Promise`
+#### `Writer.warn(message, callback)`
 Just like [Writer.info](#writerinfomessage-callback) but with WARN log level
 
-#### `Writer.error(message, callback)` returns `Promise`
+#### `Writer.error(message, callback)`
 Just like [Writer.info](#writerinfomessage-callback) but with ERROR log level
 
 ### Usage
