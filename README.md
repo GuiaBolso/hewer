@@ -289,13 +289,13 @@ Writes message with INFO log level
 2. `callback` : `FUNCTION` - `MANDATORY` - A callback function to be called after the writer task has been executed
 
 #### `Writer.debug(message, callback)` returns `Promise`
-Just like [Writer.info](#info) but with DEBUG log level
+Just like [Writer.info](#writerinfomessage-callback) but with DEBUG log level
 
 #### `Writer.warn(message, callback)` returns `Promise`
-Just like [Writer.info](#info) but with WARN log level
+Just like [Writer.info](#writerinfomessage-callback) but with WARN log level
 
 #### `Writer.error(message, callback)` returns `Promise`
-Just like [Writer.info](#info) but with ERROR log level
+Just like [Writer.info](#writerinfomessage-callback) but with ERROR log level
 
 ## Asynchronous writers
 To be documented
