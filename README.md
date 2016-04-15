@@ -63,13 +63,13 @@ Creates a new log instance with the optional provided meta data.
 Adds a [Filter](#filters) to the filters pool
 
 ### Parameters
-1. `filter` : [`Filter`](#filters) - `MANDATORY` - 
+1. `filter` : [`Filter`](#filters) - `MANDATORY` -
 
 ## `Logger.addWriter(writer)`
 Adds a [Writer](#writers) to the writers pool
 
 ### Parameters
-1. `writer` : [`Writer`](#writers) - `MANDATORY` - 
+1. `writer` : [`Writer`](#writers) - `MANDATORY` -
 
 ## `Logger.setFormatter(formatter)`
 Defines the [Formatter](#formatters) that's going to be used
@@ -152,13 +152,31 @@ A filter that applies a pattern or substring and replaces it by a pattern or sub
 
 #### Usage
 ```javascript
-var PatternFilter =  require('hewer').filters.PatternFilter;
+var PatternFilter = require('hewer').filters.PatternFilter;
 
 var filter = new PatternFilter(/(Aragorn)/, '$1 (A.K.A Strider)');
 
 console.log(filter.apply("I am Aragorn son of Arathorn"));
 //I am Aragorn (A.K.A Strider) son of Arathorn
 ```
+
+### class `KeyFilter(key, replacement)`
+Replaces the value of a key in a serialized JSON
+
+#### Parameters
+1. `key` : `STRING` - `MANDATORY` - The name of the key that must be replaced
+2. `replacement` : `STRING` - `MANDATORY` - The string for which the value of the key should be replaced
+
+### Usage
+```javascript
+var KeyFilter = require('hewer').filters.KeyFilter;
+
+var filter = new KeyFilter('name', '[REDACTED]');
+
+console.log(filter.apply('Here comes the king {"name":"Aragorn","class":"Ranger","level":"99","kingdom":"Gondor"}'));
+//Here comes the king {"name":[REDACTED],"class":"Ranger","level":"99","kingdom":"Gondor"}
+```
+
 
 ## Custom filter
 A filter is simply a class that has an `apply` method that takes a string as parameter and returns a string
@@ -313,17 +331,17 @@ function CustomWriter() {
     	//Do something with the message
         callback();
     }
-    
+
     this.debug = function(message, callback) {
     	//Do something with the message
         callback();
     }
-    
+
     this.error = function(message, callback) {
     	//Do something with the message
 	callback();   
     }
-    
+
     this.warn = function(message, callback) {
     	//Do something with the message
         callback();
