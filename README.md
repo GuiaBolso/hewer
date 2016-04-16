@@ -174,7 +174,7 @@ var KeyFilter = require('hewer').filters.KeyFilter;
 var filter = new KeyFilter('name', '[REDACTED]');
 
 console.log(filter.apply('Here comes the king {"name":"Aragorn","class":"Ranger","level":"99","kingdom":"Gondor"}'));
-//Here comes the king {"name":[REDACTED],"class":"Ranger","level":"99","kingdom":"Gondor"}
+//Here comes the king {"name":"[REDACTED]","class":"Ranger","level":"99","kingdom":"Gondor"}
 ```
 
 
