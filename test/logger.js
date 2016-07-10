@@ -224,6 +224,14 @@ describe('Testing logger writer adding', function() {
             callback()
         }  
     }
+
+    it('addWriter must returns the logger instance', function(done) {
+        var Logger = new hewer.Logger();
+        var writer = new TestWriter();
+
+        assert.equal(Logger.addWriter(writer), Logger);
+        done();
+    });
     
     it('Warn', function(done) {
         var writer = new TestWriter();
@@ -328,6 +336,14 @@ describe('Testing logger filter adding', function(done) {
             return msg;
         }
     }
+
+    it('addFilter must returns the logger instance', function(done) {
+        var Logger = new hewer.Logger();
+        var filter = new TestFilter();
+
+        assert.equal(Logger.addFilter(filter), Logger);
+        done();
+    });
     
     it('Warn', function(done) {
         var filter = new TestFilter();
@@ -432,6 +448,14 @@ describe('Testing logger formatter setting', function() {
             return 'foo'
         }
     }
+
+    it('setFormatter must returns the logger instance', function(done) {
+        var Logger = new hewer.Logger();
+        var formatter = new TestFormatter(); 
+
+        assert.equal(Logger.setFormatter(formatter), Logger);
+        done();
+    });
 
     it('info', function(done) {
         var Logger = new hewer.Logger();

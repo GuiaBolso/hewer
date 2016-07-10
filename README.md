@@ -59,19 +59,19 @@ Creates a new log instance with the optional provided meta data.
 ### Parameters
 1. `meta` : `JSON` - `OPTIONAL` - A JSON with a any arbitrary meta.
 
-## `Logger.addFilter(filter)`
+## `Logger.addFilter(filter)` returns [`Logger`]
 Adds a [Filter](#filters) to the filters pool
 
 ### Parameters
 1. `filter` : [`Filter`](#filters) - `MANDATORY` -
 
-## `Logger.addWriter(writer)`
+## `Logger.addWriter(writer)` returns [`Logger`]
 Adds a [Writer](#writers) to the writers pool
 
 ### Parameters
 1. `writer` : [`Writer`](#writers) - `MANDATORY` -
 
-## `Logger.setFormatter(formatter)`
+## `Logger.setFormatter(formatter)` returns [`Logger`]
 Defines the [Formatter](#formatters) that's going to be used
 
 ### Parameters
