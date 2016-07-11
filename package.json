@@ -1,8 +1,8 @@
 {
   "name": "hewer",
-  "version": "0.3.1",
-  "description": "A small and flexible logging library",
-  "repository": "https://github.com/matchs/hewer",
+  "version": "0.4.0",
+  "description": "A small, flexible, zero-dependency logging library",
+  "repository": "https://github.com/GuiaBolso/hewer",
   "main": "hewer.js",
   "scripts": {
     "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec && ./node_modules/.bin/codecov"
